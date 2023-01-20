@@ -2,6 +2,7 @@ package hello.springgood.service;
 
 import hello.springgood.domain.Member;
 import hello.springgood.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +11,9 @@ import java.util.Optional;
 @Service
 public class MemberService {
     private final MemoryMemberRepository memberRepository ;
-    public MemberService(MemoryMemberRepository memberRepository){
+    @Autowired
+    public MemberService(MemoryMemberRepository memberRepository) {
+
         this.memberRepository = memberRepository;
     }
 /**회원가입*/
